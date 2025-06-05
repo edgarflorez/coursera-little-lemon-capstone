@@ -1,26 +1,26 @@
 export function Nav() {
   return (
-    <nav>
-      <li>
-        <ul>
+    <nav className="main-nav">
+      <ul>
+        <li>
           <a href="./homepage.html">Home</a>
-        </ul>
-        <ul>
+        </li>
+        <li>
           <a href="./about.html">About</a>
-        </ul>
-        <ul>
+        </li>
+        <li>
           <a href="./menu.html">menu</a>
-        </ul>
-        <ul>
+        </li>
+        <li>
           <a href="./reservations.html">reservations</a>
-        </ul>
-        <ul>
+        </li>
+        <li>
           <a href="./order-online.html">order online</a>
-        </ul>
-        <ul>
+        </li>
+        <li>
           <a href="./login.html">login</a>
-        </ul>
-      </li>
+        </li>
+      </ul>
     </nav>
   );
 }
