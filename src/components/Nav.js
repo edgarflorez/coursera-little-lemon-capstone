@@ -1,11 +1,24 @@
+import { Link } from "react-router-dom";
+
 export function Nav() {
   return (
     <nav className="main-nav">
       <ul>
         <li>
-          <a className="lead-text" href="./homepage.html">
+          <Link to="/" className="lead-text">
             Home
-          </a>
+          </Link>
+          {/* <a className="lead-text" href="./homepage.html">
+            Home
+          </a> */}
+        </li>
+        <li>
+          <Link to="/booking" className="lead-text">
+            Booking
+          </Link>
+          {/* <a className="lead-text" href="./about.html">
+            About
+          </a> */}
         </li>
         <li>
           <a className="lead-text" href="./about.html">
