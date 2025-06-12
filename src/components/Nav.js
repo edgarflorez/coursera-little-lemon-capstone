@@ -13,14 +13,6 @@ export function Nav() {
           </a> */}
         </li>
         <li>
-          <Link to="/booking" className="lead-text">
-            Booking
-          </Link>
-          {/* <a className="lead-text" href="./about.html">
-            About
-          </a> */}
-        </li>
-        <li>
           <a className="lead-text" href="./about.html">
             About
           </a>

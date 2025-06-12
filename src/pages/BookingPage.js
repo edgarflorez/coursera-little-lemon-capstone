@@ -1,3 +1,5 @@
+import { BookingForm } from "../components/BookingForm.js";
+
 export default function BookingPage() {
-  return <div>BookingPage (the component for the table reservations page)</div>;
+  return <BookingForm />;
 }

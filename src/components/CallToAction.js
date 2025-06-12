@@ -1,4 +1,5 @@
 import restaurantFood from "../assets/restauranfood.jpg";
+import { Link } from "react-router-dom";
 
 /**
  * CallToAction (sometimes referred to as the jumbotron or the hero, this
@@ -21,9 +22,9 @@ export function CallToAction() {
               Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
               eiusmod tempor incididunt ut labore et dolore magna aliqua.
             </p>
-            <a href="#" class="btn homepage-hero__cta">
+            <Link to="/booking" className="btn homepage-hero__cta">
               Reserve a Table
-            </a>
+            </Link>
           </div>
           <img
             className="homepage-hero__image"
