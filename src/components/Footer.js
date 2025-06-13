@@ -3,10 +3,10 @@ import logo from "../assets/Logo.svg";
 export function Footer() {
   return (
     <footer className="grid footer">
-      <div class="footer__logo">
+      <div className="footer__logo">
         <img src={logo} alt="logo" />
       </div>
-      <div class="footer__doormat">
+      <div className="footer__doormat">
         <h2 className="section-title footer__section-title">
           Dootmat Navigation
         </h2>
