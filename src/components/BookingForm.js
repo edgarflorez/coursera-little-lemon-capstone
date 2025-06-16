@@ -1,22 +1,27 @@
 import { useState } from "react";
 
-export function BookingForm() {
+export function BookingForm({ availableTimes, onChangeDate }) {
   const [date, setDate] = useState("");
   const [time, setTime] = useState("");
   const [guests, setGuests] = useState("");
   const [ocassion, setOcassion] = useState("");
-  const [availableTimes, setAvailableTimes] = useState([
-    "17:00",
-    "18:00",
-    "19:00",
-    "20:00",
-    "21:00",
-    "22:00",
-  ]);
+  // const [availableTimes, setAvailableTimes] = useState([
+  //   "17:00",
+  //   "18:00",
+  //   "19:00",
+  //   "20:00",
+  //   "21:00",
+  //   "22:00",
+  // ]);
   const [availableOcassions, setAvailableOcassions] = useState([
     "Birthday",
     "Anniversary",
   ]);
+
+  const handleDateChange = (e) => {
+    setDate(e.target.value);
+    onChangeDate(e);
+  };
 
   return (
     <section className="booking-form">
@@ -28,7 +33,7 @@ export function BookingForm() {
               type="date"
               id="res-date"
               value={date}
-              onChange={(e) => setDate(e.target.value)}
+              onChange={handleDateChange}
             />
             <label htmlFor="res-time">Choose time</label>
             <select
@@ -37,7 +42,7 @@ export function BookingForm() {
               onChange={(e) => setTime(e.target.value)}
             >
               {availableTimes.map((time) => (
-                <option>{time}</option>
+                <option key={time}>{time}</option>
               ))}
             </select>
             <label htmlFor="guests">Number of guests</label>
@@ -57,7 +62,7 @@ export function BookingForm() {
               onChange={(e) => setOcassion(e.target.value)}
             >
               {availableOcassions.map((ocassion) => (
-                <option>{ocassion}</option>
+                <option key={ocassion}>{ocassion}</option>
               ))}
             </select>
             <input type="submit" value="Make Your reservation" />
