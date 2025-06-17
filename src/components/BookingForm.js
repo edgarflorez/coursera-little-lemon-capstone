@@ -27,6 +27,7 @@ export function BookingForm({ availableTimes, onChangeDate }) {
     <section className="booking-form">
       <div className="grid">
         <div className="page-content">
+          <h1>Book Now</h1>
           <form style={{ display: "grid", maxWidth: 200, gap: 20 }}>
             <label htmlFor="res-date">Choose date</label>
             <input
