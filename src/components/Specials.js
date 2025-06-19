@@ -8,8 +8,8 @@ import greekSalad from "../assets/greek salad.jpg";
 export function Specials() {
   return (
     <section className="specials">
-      <div class="grid">
-        <div class="page-content">
+      <div className="grid">
+        <div className="page-content">
           <div className="specials__hero">
             <h2 className="display-title">Specials</h2>
             <a className="specials__cta btn" href="#">
@@ -26,17 +26,19 @@ export function Specials() {
                 />
                 <div className="specials__card-body">
                   <div className="specials__card-header">
-                    <div class="specials__card-title card-title">
+                    <div className="specials__card-title card-title">
                       Greek salad
                     </div>
-                    <div class="specials__card-price card-title">$12.99</div>
+                    <div className="specials__card-price card-title">
+                      $12.99
+                    </div>
                   </div>
-                  <p class="specials__card-description">
+                  <p className="specials__card-description">
                     The famous greek salad of crispy lettuce, peppers, olives
                     and our Chicago style feta cheese, garnished with crunchy
                     croutons.
                   </p>
-                  <div class="specials__card-order-delivery highlight-text">
+                  <div className="specials__card-order-delivery highlight-text">
                     Order a delivery
                   </div>
                 </div>
@@ -51,17 +53,19 @@ export function Specials() {
                 />
                 <div className="specials__card-body">
                   <div className="specials__card-header">
-                    <div class="specials__card-title card-title">
+                    <div className="specials__card-title card-title">
                       Greek salad
                     </div>
-                    <div class="specials__card-price card-title">$12.99</div>
+                    <div className="specials__card-price card-title">
+                      $12.99
+                    </div>
                   </div>
-                  <p class="specials__card-description">
+                  <p className="specials__card-description">
                     The famous greek salad of crispy lettuce, peppers, olives
                     and our Chicago style feta cheese, garnished with crunchy
                     croutons.
                   </p>
-                  <div class="specials__card-order-delivery highlight-text">
+                  <div className="specials__card-order-delivery highlight-text">
                     Order a delivery
                   </div>
                 </div>
@@ -76,17 +80,19 @@ export function Specials() {
                 />
                 <div className="specials__card-body">
                   <div className="specials__card-header">
-                    <div class="specials__card-title card-title">
+                    <div className="specials__card-title card-title">
                       Greek salad
                     </div>
-                    <div class="specials__card-price card-title">$12.99</div>
+                    <div className="specials__card-price card-title">
+                      $12.99
+                    </div>
                   </div>
-                  <p class="specials__card-description">
+                  <p className="specials__card-description">
                     The famous greek salad of crispy lettuce, peppers, olives
                     and our Chicago style feta cheese, garnished with crunchy
                     croutons.
                   </p>
-                  <div class="specials__card-order-delivery highlight-text">
+                  <div className="specials__card-order-delivery highlight-text">
                     Order a delivery
                   </div>
                 </div>

@@ -1,5 +1,6 @@
 import { BookingForm } from "../components/BookingForm.js";
 import { useReducer } from "react";
+import { data, useNavigate } from "react-router-dom";
 
 export function updateTimes(availableTimes, action) {
   switch (action.type) {
@@ -21,6 +22,14 @@ export default function BookingPage() {
     null,
     initializeTimes
   );
+  const navigate = useNavigate();
+
+  function submitForm(formData) {
+    if (window.submitAPI(data)) {
+      console.log("Form submitted successfully", formData);
+      navigate("/booking-confirmation");
+    }
+  }
 
   function onChangeDate(e) {
     console.log(">>>>", e.target.value);
@@ -28,6 +37,10 @@ export default function BookingPage() {
   }
 
   return (
-    <BookingForm availableTimes={availableTimes} onChangeDate={onChangeDate} />
+    <BookingForm
+      availableTimes={availableTimes}
+      onChangeDate={onChangeDate}
+      submitForm={submitForm}
+    />
   );
 }

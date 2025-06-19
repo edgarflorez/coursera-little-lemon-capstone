@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-export function BookingForm({ availableTimes, onChangeDate }) {
+export function BookingForm({ availableTimes, onChangeDate, submitForm }) {
   const [date, setDate] = useState("");
   const [time, setTime] = useState("");
   const [guests, setGuests] = useState("");
@@ -21,6 +21,11 @@ export function BookingForm({ availableTimes, onChangeDate }) {
   const handleDateChange = (e) => {
     setDate(e.target.value);
     onChangeDate(e);
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    submitForm({ date, time, guests, ocassion });
   };
 
   return (
@@ -66,7 +71,11 @@ export function BookingForm({ availableTimes, onChangeDate }) {
                 <option key={ocassion}>{ocassion}</option>
               ))}
             </select>
-            <input type="submit" value="Make Your reservation" />
+            <input
+              type="submit"
+              value="Make Your reservation"
+              onClick={handleSubmit}
+            />
           </form>
         </div>
       </div>

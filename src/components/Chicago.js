@@ -10,7 +10,7 @@ import imageB from "../assets/Mario and Adrian b.jpg";
 export function Chicago() {
   return (
     <section className="chicago-tout">
-      <div class="grid">
+      <div className="grid">
         <div className="page-content">
           <div className="chicago-tout__body">
             <h2>Little Lemon</h2>

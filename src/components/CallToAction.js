@@ -13,12 +13,12 @@ export function CallToAction() {
   return (
     <section className="homepage-hero">
       <div className="homepage-hero__background"></div>
-      <div class="grid">
-        <div class="page-content homepage-hero__layout">
+      <div className="grid">
+        <div className="page-content homepage-hero__layout">
           <div className="homepage-hero__body">
-            <h1 class="homepage-hero__title display-title">Little Lemon</h1>
-            <div class="homepage-hero__subtitle sub-title">Chicago</div>
-            <p class="homepage-hero__description card-title">
+            <h1 className="homepage-hero__title display-title">Little Lemon</h1>
+            <div className="homepage-hero__subtitle sub-title">Chicago</div>
+            <p className="homepage-hero__description card-title">
               Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
               eiusmod tempor incididunt ut labore et dolore magna aliqua.
             </p>

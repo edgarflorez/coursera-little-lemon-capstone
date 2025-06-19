@@ -6,11 +6,11 @@
 export function Testimonials() {
   return (
     <section className="testimonials">
-      <div class="grid">
-        <div class="page-content">
+      <div className="grid">
+        <div className="page-content">
           <h2 className="testimonials__title section-title">Testimonials</h2>
           <div className="testimonials__cards">
-            <div class="testimonials__card">
+            <div className="testimonials__card">
               <div className="testimonials__card-rating">Rating</div>
               <div className="testimonials__card-image-section">
                 <img
@@ -23,7 +23,7 @@ export function Testimonials() {
               </div>
               <div className="testimonials__card-review">Review text</div>
             </div>
-            <div class="testimonials__card">
+            <div className="testimonials__card">
               <div className="testimonials__card-rating">Rating</div>
               <div className="testimonials__card-image-section">
                 <img
@@ -36,7 +36,7 @@ export function Testimonials() {
               </div>
               <div className="testimonials__card-review">Review text</div>
             </div>
-            <div class="testimonials__card">
+            <div className="testimonials__card">
               <div className="testimonials__card-rating">Rating</div>
               <div className="testimonials__card-image-section">
                 <img
@@ -49,7 +49,7 @@ export function Testimonials() {
               </div>
               <div className="testimonials__card-review">Review text</div>
             </div>
-            <div class="testimonials__card">
+            <div className="testimonials__card">
               <div className="testimonials__card-rating">Rating</div>
               <div className="testimonials__card-image-section">
                 <img
