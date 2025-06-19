@@ -4,14 +4,15 @@ import { useReducer } from "react";
 export function updateTimes(availableTimes, action) {
   switch (action.type) {
     case "updateDate":
-      return availableTimes;
+      const date = new Date(action.date);
+      return window.fetchAPI(date);
     default:
       return availableTimes;
   }
 }
 
 export function initializeTimes() {
-  return ["17:00", "18:00", "19:00", "20:00", "21:00", "22:00"];
+  return window.fetchAPI(new Date());
 }
 
 export default function BookingPage() {
