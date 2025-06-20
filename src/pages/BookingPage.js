@@ -1,20 +1,7 @@
 import { BookingForm } from "../components/BookingForm.js";
 import { useReducer } from "react";
 import { data, useNavigate } from "react-router-dom";
-
-export function updateTimes(availableTimes, action) {
-  switch (action.type) {
-    case "updateDate":
-      const date = new Date(action.date);
-      return window.fetchAPI(date);
-    default:
-      return availableTimes;
-  }
-}
-
-export function initializeTimes() {
-  return window.fetchAPI(new Date());
-}
+import { updateTimes, initializeTimes } from "../utils/BookingReducer.js";
 
 export default function BookingPage() {
   const [availableTimes, dispatch] = useReducer(
