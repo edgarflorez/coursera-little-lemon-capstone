@@ -1,81 +1,120 @@
 import { useState } from "react";
+import { useFormik } from "formik";
+import * as Yup from "yup";
 
 export function BookingForm({ availableTimes, onChangeDate, submitForm }) {
-  const [date, setDate] = useState("");
-  const [time, setTime] = useState("");
-  const [guests, setGuests] = useState("");
-  const [ocassion, setOcassion] = useState("");
-  // const [availableTimes, setAvailableTimes] = useState([
-  //   "17:00",
-  //   "18:00",
-  //   "19:00",
-  //   "20:00",
-  //   "21:00",
-  //   "22:00",
-  // ]);
   const [availableOcassions, setAvailableOcassions] = useState([
     "Birthday",
     "Anniversary",
   ]);
 
-  const handleDateChange = (e) => {
-    setDate(e.target.value);
-    onChangeDate(e);
-  };
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    submitForm({ date, time, guests, ocassion });
-  };
+  const formik = useFormik({
+    initialValues: {
+      date: "",
+      time: "",
+      guests: "0",
+      occasion: "",
+    },
+    onSubmit: (values) => {
+      console.log(JSON.stringify(values, null, 2));
+      submitForm(values);
+    },
+    validationSchema: Yup.object({
+      date: Yup.date().required("Date is required"),
+      time: Yup.string().required("Time is required"),
+      guests: Yup.number()
+        .moreThan(0)
+        .lessThan(10)
+        .required("Number of guests is required"),
+      occasion: Yup.string(),
+    }),
+  });
 
   return (
     <section className="booking-form">
       <div className="grid">
         <div className="page-content">
           <h1>Book Now</h1>
-          <form style={{ display: "grid", maxWidth: 200, gap: 20 }}>
-            <label htmlFor="res-date">Choose date</label>
-            <input
-              type="date"
-              id="res-date"
-              value={date}
-              onChange={handleDateChange}
-            />
-            <label htmlFor="res-time">Choose time</label>
-            <select
-              id="res-time "
-              value={time}
-              onChange={(e) => setTime(e.target.value)}
+          <form
+            onSubmit={formik.handleSubmit}
+            // onSubmit={handleSubmit}
+            style={{ display: "grid", maxWidth: 200, gap: 20 }}
+          >
+            <div
+              className={
+                "form-control " +
+                (formik.touched.date && formik.errors.date
+                  ? "form-control--error"
+                  : "")
+              }
             >
-              {availableTimes.map((time) => (
-                <option key={time}>{time}</option>
-              ))}
-            </select>
-            <label htmlFor="guests">Number of guests</label>
-            <input
-              type="number"
-              placeholder="1"
-              min="1"
-              max="10"
-              id="guests"
-              value={guests}
-              onChange={(e) => setGuests(e.target.value)}
-            />
-            <label htmlFor="occasion">Occasion</label>
-            <select
-              id="occasion"
-              value={ocassion}
-              onChange={(e) => setOcassion(e.target.value)}
+              <label htmlFor="date">Choose date</label>
+              <input
+                id="date"
+                max="2025-06-28"
+                min="2025-06-21"
+                name="date"
+                type="date"
+                {...formik.getFieldProps("date")}
+                onChange={(e) => {
+                  formik.handleChange(e);
+                  onChangeDate(e);
+                }}
+              />
+              {/* <p className="form-control__error">{formik.errors.date}</p> */}
+              <p className="form-control__error">{formik.errors.date}</p>
+            </div>
+            <div
+              className={
+                "form-control " +
+                (formik.touched.time && formik.errors.time
+                  ? "form-control--error"
+                  : "")
+              }
             >
-              {availableOcassions.map((ocassion) => (
-                <option key={ocassion}>{ocassion}</option>
-              ))}
-            </select>
-            <input
-              type="submit"
-              value="Make Your reservation"
-              onClick={handleSubmit}
-            />
+              <label htmlFor="time">Choose time</label>
+              <select name="time" id="time" {...formik.getFieldProps("time")}>
+                <option value="">Available dates</option>
+                {availableTimes.map((time) => (
+                  <option key={time}>{time}</option>
+                ))}
+              </select>
+              <p className="form-control__error">{formik.errors.time}</p>
+            </div>
+            <div
+              className={
+                "form-control " +
+                (formik.touched.guests && formik.errors.guests
+                  ? "form-control--error"
+                  : "")
+              }
+            >
+              <label htmlFor="guests">Number of guests</label>
+              <input
+                id="guests"
+                max="10"
+                min="1"
+                name="guests"
+                placeholder="1"
+                type="number"
+                {...formik.getFieldProps("guests")}
+              />
+              <p className="form-control__error">{formik.errors.guests}</p>
+            </div>
+            <div>
+              <label htmlFor="occasion">Occasion</label>
+              <select
+                id="occasion"
+                name="occasion"
+                {...formik.getFieldProps("occasion")}
+              >
+                <option value="">Select any</option>
+                {availableOcassions.map((ocassion) => (
+                  <option key={ocassion}>{ocassion}</option>
+                ))}
+              </select>
+            </div>
+            <input type="submit" value="Make Your reservation" />
           </form>
         </div>
       </div>

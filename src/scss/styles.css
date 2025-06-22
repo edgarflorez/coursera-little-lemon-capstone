@@ -369,3 +369,15 @@ body {
   width: 200px;
   height: auto;
 }
+
+/* Booking */
+.form-control {
+}
+.form-control--error .form-control__error {
+  display: block;
+}
+
+.form-control__error {
+  display: none;
+  color: red;
+}
