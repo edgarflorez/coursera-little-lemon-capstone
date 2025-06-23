@@ -1,11 +1,10 @@
 import { updateTimes, initializeTimes } from "../utils/BookingReducer";
+import { mockTimes } from "./mocks/times";
 
 test("Verify reducer functionality", () => {
-  window.fetchAPI = jest
-    .fn()
-    .mockReturnValue(["17:00", "18:00", "19:00", "20:00", "21:00", "22:00"]);
+  window.fetchAPI = jest.fn().mockReturnValue(mockTimes);
 
-  const expectedState = ["17:00", "18:00", "19:00", "20:00", "21:00", "22:00"];
+  const expectedState = mockTimes;
   const initialState = initializeTimes();
 
   expect(initialState).toEqual(expectedState);

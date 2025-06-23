@@ -114,7 +114,11 @@ export function BookingForm({ availableTimes, onChangeDate, submitForm }) {
                 ))}
               </select>
             </div>
-            <input type="submit" value="Make Your reservation" />
+            <input
+              type="submit"
+              value="Make Your reservation"
+              disabled={!(formik.isValid && formik.dirty)}
+            />
           </form>
         </div>
       </div>
