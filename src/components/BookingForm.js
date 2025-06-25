@@ -37,7 +37,6 @@ export function BookingForm({ availableTimes, onChangeDate, submitForm }) {
           <h1>Book Now</h1>
           <form
             onSubmit={formik.handleSubmit}
-            // onSubmit={handleSubmit}
             style={{ display: "grid", maxWidth: 200, gap: 20 }}
           >
             <div
@@ -61,7 +60,6 @@ export function BookingForm({ availableTimes, onChangeDate, submitForm }) {
                   onChangeDate(e);
                 }}
               />
-              {/* <p className="form-control__error">{formik.errors.date}</p> */}
               <p className="form-control__error">{formik.errors.date}</p>
             </div>
             <div
